@@ -1,0 +1,112 @@
+{
+  "name": "paymate-ai",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx server.ts",
+    "build": "vite build",
+    "start": "node server.ts",
+    "preview": "vite preview",
+    "clean": "rm -rf dist",
+    "lint": "vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "jest",
+    "test:perf": "k6 run tests/performance/basic.test.js"
+  },
+  "dependencies": {
+    "@google/genai": "^1.29.0",
+    "better-sqlite3": "^12.4.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "firebase": "^12.18.0",
+    "firebase-admin": "^14.3.0",
+    "i18next": "^25.8.13",
+    "i18next-browser-languagedetector": "^8.2.1",
+    "lucide-react": "^0.546.0",
+    "motion": "^12.23.24",
+    "node-cron": "^4.2.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-i18next": "^16.5.4",
+    "react-router-dom": "^7.13.1",
+    "tailwind-merge": "^3.5.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.7",
+    "@babel/preset-env": "^7.29.7",
+    "@babel/preset-react": "^7.29.7",
+    "@babel/preset-typescript": "^7.29.7",
+    "@tailwindcss/vite": "^4.1.14",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/express": "^5.0.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^22.14.0",
+    "@types/node-cron": "^3.0.11",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^5.0.4",
+    "autoprefixer": "^10.4.21",
+    "babel-jest": "^30.5.1",
+    "jest": "^30.5.1",
+    "jest-axe": "^10.0.0",
+    "jest-environment-jsdom": "^30.5.1",
+    "markdownlint-cli": "^0.49.1",
+    "serve": "^14.2.6",
+    "tailwindcss": "^4.1.14",
+    "ts-jest": "^29.4.9",
+    "tsx": "^4.21.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0",
+    "wait-on": "^9.1.0"
+  },
+  "overrides": {
+    "esbuild": "^0.25.0",
+    "qs": "^6.14.0",
+    "uuid": "^11.1.1"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.32.0",
+    "@tailwindcss/oxide-linux-x64-gnu": "^4.1.14",
+    "lightningcss-linux-x64-gnu": "^1.29.0"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ],
+      [
+        "@babel/preset-react",
+        {
+          "runtime": "automatic"
+        }
+      ],
+      "@babel/preset-typescript"
+    ]
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "transform": {
+      "^.+\\.(ts|tsx|js|jsx)$": "babel-jest"
+    },
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "<rootDir>/tests/performance/"
+    ],
+    "transformIgnorePatterns": [
+      "/node_modules/(?!(@google/genai|firebase|@firebase|lucide-react|i18next|react-router-dom)/)"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1",
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+# Core Python / Node
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+node_modules/
+dist/
+build/
+*.egg-info/
+
+# Logs & Databases
+*.log
+*.sqlite3
+coverage.xml
+nosetests.xml
+*.coverage
+htmlcov/
+.cache/
+
+# Editor & IDE
+.vscode/*
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Documentation Build Artifacts
+/docs/**/*.tmp
+/docs/**/*.bak
+/docs/**/*.swp
+/docs/**/*.log
+
+# Governance Binder
+/docs/investor-presentations/**/*.pdf
+/docs/investor-presentations/**/*.pptx
+/docs/investor-presentations/**/*.docx
+
+# Repo Visuals
+*.psd
+*.ai
+*.sketch
+*.xcf
+
+# SECRETS & ENVIRONMENT FILES (Strict Protection)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
